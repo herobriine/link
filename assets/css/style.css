@@ -1,0 +1,184 @@
+/* ============================================
+   EDIT ME: quick settings
+   Change the button text/link and colors here.
+   ============================================ */
+:root {
+  --glass-bg: rgba(18, 16, 20, 0.32);
+  --glass-bg-active: rgba(18, 16, 20, 0.48);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-blur: 22px;
+  --text: #f6f1ee;
+  --overlay-top: rgba(10, 6, 10, 0.35);
+  --overlay-bottom: rgba(10, 6, 10, 0.55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #000;
+  overflow: hidden;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 100vh;
+}
+
+/* The hero video. To swap it, replace the file at
+   assets/images/hero.mp4 with your own clip
+   (keep the same file name so nothing else needs to change).
+   assets/images/hero.jpg is shown while the video loads,
+   or as a fallback photo if no video is present. */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: #000;
+}
+
+/* gradient so icons/button stay readable over any footage,
+   a little heavier top and bottom, clear through the middle */
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--overlay-top) 0%,
+    rgba(0, 0, 0, 0) 22%,
+    rgba(0, 0, 0, 0) 70%,
+    var(--overlay-bottom) 100%
+  );
+  pointer-events: none;
+}
+
+/* ---------- shared glass surface ---------- */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.glass:active {
+  background: var(--glass-bg-active);
+  transform: scale(0.96);
+}
+
+/* ---------- top-right menu icon ---------- */
+.menu-btn {
+  position: absolute;
+  top: calc(20px + env(safe-area-inset-top));
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--glass-border);
+  z-index: 3;
+}
+
+.menu-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- social icon row (top, centered) ---------- */
+.social-row {
+  position: absolute;
+  top: calc(78px + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- centered CTA ---------- */
+.cta-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  padding: 0 32px;
+}
+
+.cta-button {
+  pointer-events: auto;
+  appearance: none;
+  border-radius: 999px;
+  width: 100%;
+  max-width: 440px;
+  padding: 10px 10px 10px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.cta-label {
+  font-family: 'Poppins', -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.cta-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--text);
+  color: #1a1620;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass {
+    transition: none;
+  }
+}

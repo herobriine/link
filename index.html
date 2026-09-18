@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Google Analytics: EDIT ME — replace G-YOUR-ID with your real Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YOUR-ID');
+  </script>
+</head>
+<body>
+
+  <div class="screen">
+
+    <!-- To replace the footage: swap the file at assets/images/hero.mp4
+         (assets/images/hero.jpg shows while it loads, or as a fallback) -->
+    <video
+      class="hero-media"
+      poster="assets/images/hero.jpg"
+      autoplay muted loop playsinline
+    >
+      <source src="assets/images/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="scrim"></div>
+
+    <!-- Menu icon, no label -->
+    <button class="menu-btn glass" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+
+    <!-- Social icons, no labels -->
+    <div class="social-row">
+      <a class="social-btn glass js-cta-link" href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a class="social-btn glass js-cta-link" href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M14 8.5h2.2V5.3h-2.4c-2.3 0-3.6 1.4-3.6 3.7v2H8v3.2h2.2V21h3.2v-6.8h2.4l.4-3.2h-2.8V9.3c0-.6.2-.8 1-.8Z"/>
+        </svg>
+      </a>
+      <a class="social-btn glass js-cta-link" href="#" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+          <path d="M21 4 3 11.4l6 2.2M21 4 15.6 20l-6.4-6.4M21 4 9.2 13.9v5.3"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Change the link (href) and label below -->
+    <div class="cta-wrap">
+      <a class="cta-button glass js-cta-link" href="#">
+        <span class="cta-label">Next</span>
+        <span class="cta-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"/>
+            <polyline points="8 7 17 7 17 16"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    // ============================================
+    // EDIT ME: put your destination link here.
+    // Every button/icon on the page (Next, Instagram,
+    // Facebook, Telegram) will go to this one URL.
+    // ============================================
+    const DESTINATION_URL = "https://orphosysfoundation.blogspot.com/2026/09/orphosys-foundation.html";
+
+    document.querySelectorAll(".js-cta-link").forEach(function (el) {
+      el.setAttribute("href", DESTINATION_URL);
+    });
+  </script>
+
+</body>
+</html>
